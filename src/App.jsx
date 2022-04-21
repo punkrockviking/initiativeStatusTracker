@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Character from './components/Character'
 import './App.css';
 
 function App() {
   return (
-    <main>
-      React⚛️ + Vite⚡ + Replit🌀
-    </main>
+    <div>
+      <Character />
+    </div>
+    
   );
 }
 
