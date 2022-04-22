@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Character() {
 
+  //declare variable to track initiative score called initScore
+  const [initScore, setInitScore] = useState(1)
+
+  const onInitChange = (event) => {
+    event.preventDefault()
+    setInitScore(event.target.value)
+  }
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault()
+  }
+
+  useEffect(() => {
+    
+  })
 
   return (
     <div>
@@ -14,16 +29,19 @@ function Character() {
             name='name'
           />
         </label>
-        <label>
+        <form 
+          onChange={onInitChange} 
+          onSubmit={handleOnSubmit}
+        >
           Initiative
           <input 
-            value='10' 
+            value={initScore} 
             type="number"
             name="level"
             min="1"
             max="30"
           />
-        </label>
+        </form>
         <label>
           Team
           <input 
