@@ -21,35 +21,39 @@ function Character() {
   return (
     <div>
       <div>
-        <label>
-          Name
-          <input 
-            value='Jari Bloodborne' 
-            type='string'
-            name='name'
-          />
-        </label>
-        <form 
-          onChange={onInitChange} 
-          onSubmit={handleOnSubmit}
+        <form
+            
         >
-          Initiative
-          <input 
-            value={initScore} 
-            type="number"
-            name="level"
-            min="1"
-            max="30"
-          />
+          <label>
+            Name
+            <input 
+              value='Jari Bloodborne' 
+              type='string'
+              name='name'
+            />
+          </label>
+          <form 
+            onChange={onInitChange} 
+            onSubmit={handleOnSubmit}
+          >
+            Initiative
+            <input 
+              value={initScore} 
+              type="number"
+              name="level"
+              min="1"
+              max="30"
+            />
+          </form>
+          <label>
+            Team
+            <input 
+              value='green' 
+              type="string"
+              name='team'
+            />
+          </label>
         </form>
-        <label>
-          Team
-          <input 
-            value='green' 
-            type="string"
-            name='team'
-          />
-        </label>
       </div>
     </div>
   )
