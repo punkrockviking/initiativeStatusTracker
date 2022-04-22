@@ -4,7 +4,9 @@ function Character() {
 
   //declare variable to track initiative score called initScore
   const [initScore, setInitScore] = useState(1)
-
+  const [charName, setCharName] = useState('name')
+  const [teamColor, setTeamColor] = useState('')
+  const [charNotes, setCharNotes] = useState('')
   const onInitChange = (event) => {
     event.preventDefault()
     setInitScore(event.target.value)
