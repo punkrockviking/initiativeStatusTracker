@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import StatusList from './StatusList'
 
 class Character extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Character extends Component {
       initScore: 1,
       charName: 'name',
       teamColor: 'green',
-      charNotes: [],
+      charStatus: ['Stunned', 'Prone', 'Frightened'],
       concentrate: false,
     }
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -65,7 +66,9 @@ class Character extends Component {
                 name="teamColor"
               />
             </label>
+            
           </form>
+          <StatusList statusList={this.state.charStatus} />
         </div>
       </div>
     )
