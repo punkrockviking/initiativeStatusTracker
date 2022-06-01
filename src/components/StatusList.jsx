@@ -4,15 +4,23 @@ const StatusList = (props) => {
 
   const statusList = props.statusList
   const listItems = statusList.map((status) =>
-    <div>{status}</div>
+    <form>
+        {status}
+      <label>
+        Turns
+        <input type="number" value="0" />
+      </label>
+      <button>
+        delete
+      </button>
+    </form>
   )
 
   return (
-    <div>
-      <ul>
+      <div>
+        Status Effects:
         {listItems}
-      </ul>
-    </div>
+      </div>
   )
 }
 

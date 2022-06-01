@@ -66,9 +66,11 @@ class Character extends Component {
                 name="teamColor"
               />
             </label>
-            
+            <label>
+              <StatusList statusList={this.state.charStatus} />
+            </label>
           </form>
-          <StatusList statusList={this.state.charStatus} />
+          
         </div>
       </div>
     )
