@@ -8,7 +8,7 @@ class Character extends Component {
       initScore: 1,
       charName: 'name',
       teamColor: 'green',
-      charStatus: ['Stunned', 'Prone', 'Frightened'],
+      charStatus: ['Stunned', 'Prone', 'Frightened', 'Nerf Herder'],
       concentrate: false,
     }
     this.handleOnChange = this.handleOnChange.bind(this)
