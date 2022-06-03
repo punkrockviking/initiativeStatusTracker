@@ -13,7 +13,7 @@ const StatusList = (props) => {
         <input type="number" value="0" />
       </label>
       <button>
-        delete
+        remove
       </button>
     </form>
   )
