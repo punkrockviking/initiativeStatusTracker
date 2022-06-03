@@ -5,7 +5,9 @@ const StatusList = (props) => {
   const statusList = props.statusList
   const listItems = statusList.map((status) =>
     <form>
-        {status}
+      <label>
+        <input type="string" value={status} />
+      </label>
       <label>
         Turns
         <input type="number" value="0" />
