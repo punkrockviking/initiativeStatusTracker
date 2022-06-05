@@ -3,6 +3,11 @@ import styled from 'styled-components'
 
 const Button = styled.button`
 
+    /* Adapt the colors based on primary prop */
+/*   background: red; */
+  background: ${props => props.buttonColor};
+  color: black;
+
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -10,10 +15,5 @@ const Button = styled.button`
   border-radius: 3px;
 `;
 
-// render(
-//   <div>
-//     <Button>remove</Button>
-//   </div>
-// );
 
 export default Button

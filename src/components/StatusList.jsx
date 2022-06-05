@@ -31,7 +31,7 @@ const StatusList = (props) => {
         Turns
         <input type="number" value="0" />
       </label>
-      <Button>
+      <Button buttonColor="red" >
         remove
       </Button>
     </form>
