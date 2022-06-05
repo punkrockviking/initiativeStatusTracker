@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Button from './styledComponents/Button'
+
 
 const StatusList = (props) => {
 
@@ -29,9 +31,9 @@ const StatusList = (props) => {
         Turns
         <input type="number" value="0" />
       </label>
-      <button>
+      <Button>
         remove
-      </button>
+      </Button>
     </form>
   )
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import StatusList from './StatusList'
-// import Button from './styledComponents/Button'
 
 class Character extends Component {
   constructor(props) {
@@ -71,7 +70,6 @@ class Character extends Component {
               <StatusList statusList={this.state.charStatus} />
             </label>
           </form>
-          
         </div>
       </div>
     )

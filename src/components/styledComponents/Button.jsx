@@ -10,10 +10,10 @@ const Button = styled.button`
   border-radius: 3px;
 `;
 
-render(
-  <div>
-    <Button>remove</Button>
-  </div>
-);
+// render(
+//   <div>
+//     <Button>remove</Button>
+//   </div>
+// );
 
 export default Button
