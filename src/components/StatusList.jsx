@@ -45,6 +45,7 @@ const StatusList = (props) => {
       <div>
         {open && listItems}
       </div>
+      
     </div>
   )
 }

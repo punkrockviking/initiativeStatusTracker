@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StatusList from './StatusList'
+// import Button from './styledComponents/Button'
 
 class Character extends Component {
   constructor(props) {
