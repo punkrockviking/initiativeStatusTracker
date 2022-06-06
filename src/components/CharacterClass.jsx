@@ -67,6 +67,10 @@ class Character extends Component {
               />
             </label>
             <label>
+              <input type="checkbox" />
+              Concentration
+            </label>
+            <label>
               <StatusList statusList={this.state.charStatus} />
             </label>
           </form>
