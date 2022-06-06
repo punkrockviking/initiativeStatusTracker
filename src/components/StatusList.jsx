@@ -39,11 +39,11 @@ const StatusList = (props) => {
 
   return (
     <div>
-      <div
+      <Button
         onClick={() => setOpen(!open) }   
       >
         Status Effects:
-      </div>
+      </Button>
       <div>
         {open && listItems}
       </div>
