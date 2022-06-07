@@ -15,9 +15,9 @@ class Character extends Component {
     this.handleOnSubmit = this.handleOnSubmit.bind(this)
   }
 
-  
-  
-  
+
+
+
   handleOnChange(event) {
     event.preventDefault()
     const { name, value } = event.target
@@ -31,7 +31,7 @@ class Character extends Component {
     event.preventDefault()
   }
 
-  
+
   render() {
     return (
       <div>
@@ -42,26 +42,26 @@ class Character extends Component {
           >
             <label>
               Name
-              <input 
-                value={this.state.charName} 
+              <input
+                value={this.state.charName}
                 type="string"
                 name="charName"
               />
             </label>
-              <div>
-                Initiative
-                <input 
-                  value={this.state.initScore}
-                  type="number"
-                  name="initScore"
-                  min="1"
-                  max="30"
-                />
-              </div>
+            <div>
+              Initiative
+                <input
+                value={this.state.initScore}
+                type="number"
+                name="initScore"
+                min="1"
+                max="30"
+              />
+            </div>
             <label>
               Team
-              <input 
-                value={this.state.teamColor} 
+              <input
+                value={this.state.teamColor}
                 type="string"
                 name="teamColor"
               />
