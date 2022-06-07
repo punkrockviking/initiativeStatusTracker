@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from './styledComponents/Button'
-// import StatusEffect from './StatusEffect'
+import StatusEffect from './StatusEffect'
 
 
 const StatusList = (props) => {
@@ -8,7 +8,7 @@ const StatusList = (props) => {
   const [open, setOpen] = useState(false)
   const statusList = props.statusList
   const [statusItems, setStatusItems] = useState([{name: 'prone', turns: 1}])
-
+  
   class StatusObj {
     constructor(name='new status', turns=0) {
       this.name = name,
@@ -30,7 +30,7 @@ const StatusList = (props) => {
       </label>
       <label>
         Turns
-        <input type="number" value={status.value} />
+        <input type="number" value={status.turns} />
       </label>
       <Button 
         buttonColor="red" 
@@ -76,7 +76,6 @@ const StatusList = (props) => {
       <div>
         {open && listItems}
       </div>
-      
     </div>
   )
 }
