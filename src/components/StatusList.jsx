@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from './styledComponents/Button'
 
 
 const StatusList = (props) => {
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const statusList = props.statusList
-  useEffect(() => {
-        const onBodyClick = (event) => {
-        setOpen(!open);
-        };
-        // document.body.addEventListener('click', onBodyClick, { 
-        //     capture: true 
-        // });
+  const [statusItems, setStatusItems] = useState([])
 
-        // return () => {
-        //     document.body.removeEventListener('click', onBodyClick, {
-        //         capture: true,
-        //     });
-        // };
-
-    }, []);
+  class StatusObj {
+    constructor(name='new status', turns=0) {
+      this.name = name,
+      this.turns = turns
+    }
+  }
   
   const listItems = statusList.map((status) =>
     <form>
@@ -44,6 +37,13 @@ const StatusList = (props) => {
       >
         Status Effects:
       </Button>
+      <div>
+        {open && (
+          <Button>
+          Add Status
+          </Button>
+        )}
+      </div>
       <div>
         {open && listItems}
       </div>
