@@ -7,11 +7,11 @@ const StatusEffect = (props) => {
   return (
     <form>
       <label>
-        <input type="string" value={props.name.value} />
+        <input type="string" value={props.name} />
       </label>
       <label>
         Turns
-        <input type="number" value={props.turns.value} />
+        <input type="number" value={parseInt(props.turns)} />
       </label>
       <Button 
         buttonColor="red" 

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './styledComponents/Button'
+// import StatusEffect from './StatusEffect'
 
 
 const StatusList = (props) => {
 
   const [open, setOpen] = useState(false)
   const statusList = props.statusList
-  const [statusItems, setStatusItems] = useState([])
+  const [statusItems, setStatusItems] = useState([{name: 'prone', turns: 1}])
 
   class StatusObj {
     constructor(name='new status', turns=0) {
@@ -14,21 +15,47 @@ const StatusList = (props) => {
       this.turns = turns
     }
   }
+
+  const addStatus = () => {
+    let newStatusItems = statusItems
+    const newItem = new StatusObj()
+    newStatusItems.push(newItem)
+    setStatusItems(newStatusItems)
+  }
   
-  const listItems = statusList.map((status) =>
+  const listItems = statusItems.map((status) => 
     <form>
       <label>
-        <input type="string" value={status} />
+        <input type="string" value={status.name} />
       </label>
       <label>
         Turns
-        <input type="number" value="0" />
+        <input type="number" value={status.value} />
       </label>
-      <Button buttonColor="red" >
+      <Button 
+        buttonColor="red" 
+      >
         remove
       </Button>
     </form>
   )
+
+  // const listItems = statusList.map((status) => 
+  //   <form>
+  //     <label>
+  //       <input type="string" value={status} />
+  //     </label>
+  //     <label>
+  //       Turns
+  //       <input type="number" />
+  //     </label>
+  //     <Button 
+  //       buttonColor="red" 
+  //     >
+  //       remove
+  //     </Button>
+  //   </form> 
+  // )
 
   return (
     <div>
@@ -39,7 +66,9 @@ const StatusList = (props) => {
       </Button>
       <div>
         {open && (
-          <Button>
+          <Button
+            onClick={addStatus}
+          >
           Add Status
           </Button>
         )}
