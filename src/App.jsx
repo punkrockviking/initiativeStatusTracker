@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import Character from './components/Character'
-import Character from './components/CharacterClass'
+import Character from './components/Character'
 
 import './App.css';
 

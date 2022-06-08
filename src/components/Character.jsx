@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StatusList from './StatusList'
+import StatusEffect from './StatusEffect'
 import Button from './styledComponents/Button'
 
 class Character extends Component {
@@ -13,13 +14,16 @@ class Character extends Component {
       concentrate: false,
       showEffects: false,
     }
+    
     this.handleOnChange = this.handleOnChange.bind(this)
     this.handleOnSubmit = this.handleOnSubmit.bind(this)
     this.handleAddStatusClick = this.handleAddStatusClick(this)
+
+    
   }
 
-  
-  
+
+
   // class StatusObj {
   //   constructor(name='new status', duration='1', unit='turns') {
   //     this.name = name,
@@ -46,7 +50,7 @@ class Character extends Component {
       unit: 'turns',
     }
     newStatusItems.push(newItem)
-    
+
     this.setState({
       statusEffects: newStatusItems
     })
@@ -67,8 +71,14 @@ class Character extends Component {
 
 
   render() {
+
+    const effectsButtonText = this.state.showEffects ? 'Hide Status Effects' : 'Show Status Effects';
+    
     return (
       <div>
+        <Button onClick={() => console.log(this.state)} >
+          Log State
+        </Button>
         <div>
           <form
             onChange={this.handleOnChange}
@@ -106,10 +116,13 @@ class Character extends Component {
             </label>
           </form>
           <div>
-            <Button onClick={this.handleAddStatusClick} >
-              Status Effects add:
+            <Button onClick={() =>
+              this.setState({
+                showEffects: !this.state.showEffects
+              })} 
+            >
+              {effectsButtonText}
             </Button>
-            <StatusList statusList={this.state.statusEffects} />
           </div>
         </div>
       </div>
