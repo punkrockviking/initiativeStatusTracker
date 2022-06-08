@@ -10,9 +10,11 @@ const StatusList = (props) => {
   const [statusItems, setStatusItems] = useState([{name: 'prone', turns: 1}])
   
   class StatusObj {
-    constructor(name='new status', turns=0) {
+    constructor(name='new status', duration='1', unit='turns', index) {
       this.name = name,
-      this.turns = turns
+      this.duration = parseInt(duration),
+      this.unit = unit,
+      this.index = index
     }
   }
 
@@ -24,13 +26,17 @@ const StatusList = (props) => {
   }
   
   const listItems = statusList.map((status) => 
-    <form>
+    <form key={Math.random()}>
       <label>
-        <input type="string" defaultValue={status.name} />
+        <input type="text" defaultValue={status.name} />
       </label>
       <label>
-        Turns
-        <input type="number" defaultValue={status.turns} />
+        Duration:
+        <input type="number" defaultValue={status.duration} min={0} max={60} />
+      </label>
+      <label>
+        Units
+        <input type="text" defaultValue="turns" />
       </label>
       <Button 
         buttonColor="red" 
@@ -65,16 +71,7 @@ const StatusList = (props) => {
         Status Effects:
       </Button>
       <div>
-        {open && (
-          <Button
-            onClick={addStatus}
-          >
-          Add Status
-          </Button>
-        )}
-      </div>
-      <div>
-        {open && listItems}
+        {listItems}
       </div>
     </div>
   )

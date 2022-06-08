@@ -14,46 +14,41 @@ class Character extends Component {
       concentrate: false,
       showEffects: false,
     }
-    
+
     this.handleOnChange = this.handleOnChange.bind(this)
     this.handleOnSubmit = this.handleOnSubmit.bind(this)
-    this.handleAddStatusClick = this.handleAddStatusClick(this)
+    this.addStatus = this.addStatus.bind(this)
 
-    
+
   }
 
 
 
-  // class StatusObj {
-  //   constructor(name='new status', duration='1', unit='turns') {
-  //     this.name = name,
-  //     this.duration = parseInt(duration),
-  //     this.unit = unit
-  //   }
-  // }
 
-  // addStatus() {
-  //   let newStatusItems = statusItems
-  //   const newItem = new StatusObj()
-  //   newStatusItems.push(newItem)
-  //   setStatusItems(newStatusItems)
-  // }
 
-  handleAddStatusClick() {
-    // event.preventDefault()
-    // console.log(this.state.statusEffects)
-    const { statusEffects } = this.state.statusEffects
-    let newStatusItems = this.state.statusEffects
-    const newItem = {
-      name: 'new status',
-      duration: 1,
-      unit: 'turns',
+  addStatus() {
+    class StatusObj {
+      constructor(/*index, */name='new status', duration='1', unit='turns') {
+        // this.index = index,
+        this.name = name,
+        this.duration = parseInt(duration),
+        this.unit = unit
+      }
     }
+    // const { statusEffects } = this.state
+    let newStatusItems = this.state.statusEffects
+    // const newStatusIndex = statusEffects.length > 0 ? statusEffects.length - 1 : 0
+    const newItem = new StatusObj()
     newStatusItems.push(newItem)
-
-    this.setState({
-      statusEffects: newStatusItems
+    try {
+      this.setState({
+      statusEffects : newStatusItems
     })
+    } 
+    catch(error) {
+      console.error(error)
+    }
+    
   }
 
   handleOnChange(event) {
@@ -73,7 +68,7 @@ class Character extends Component {
   render() {
 
     const effectsButtonText = this.state.showEffects ? 'Hide Status Effects' : 'Show Status Effects';
-    
+
     return (
       <div>
         <Button onClick={() => console.log(this.state)} >
@@ -116,13 +111,17 @@ class Character extends Component {
             </label>
           </form>
           <div>
+            <Button onClick={this.addStatus} >
+              Add Status
+            </Button>
             <Button onClick={() =>
               this.setState({
                 showEffects: !this.state.showEffects
-              })} 
+              })}
             >
               {effectsButtonText}
             </Button>
+            {this.state.showEffects && (<StatusList statusList={this.state.statusEffects} />)}
           </div>
         </div>
       </div>
