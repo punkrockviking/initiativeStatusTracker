@@ -23,14 +23,14 @@ const StatusList = (props) => {
     setStatusItems(newStatusItems)
   }
   
-  const listItems = statusItems.map((status) => 
+  const listItems = statusList.map((status) => 
     <form>
       <label>
-        <input type="string" value={status.name} />
+        <input type="string" defaultValue={status.name} />
       </label>
       <label>
         Turns
-        <input type="number" value={status.turns} />
+        <input type="number" defaultValue={status.turns} />
       </label>
       <Button 
         buttonColor="red" 
