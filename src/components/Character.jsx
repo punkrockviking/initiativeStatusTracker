@@ -111,9 +111,6 @@ class Character extends Component {
             </label>
           </form>
           <div>
-            <Button onClick={this.addStatus} >
-              Add Status
-            </Button>
             <Button onClick={() =>
               this.setState({
                 showEffects: !this.state.showEffects
@@ -121,7 +118,7 @@ class Character extends Component {
             >
               {effectsButtonText}
             </Button>
-            {this.state.showEffects && (<StatusList statusList={this.state.statusEffects} />)}
+            {this.state.showEffects && (<div><StatusList statusList={this.state.statusEffects} /> <Button onClick={this.addStatus} >Add Status</Button></div>)}
           </div>
         </div>
       </div>

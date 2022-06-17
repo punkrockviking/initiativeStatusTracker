@@ -65,11 +65,9 @@ const StatusList = (props) => {
 
   return (
     <div>
-      <Button
-        onClick={() => setOpen(!open) }   
-      >
+      <h3>
         Status Effects:
-      </Button>
+      </h3>
       <div>
         {listItems}
       </div>
