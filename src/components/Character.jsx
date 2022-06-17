@@ -33,6 +33,7 @@ class Character extends Component {
         this.name = name,
         this.duration = parseInt(duration),
         this.unit = unit
+        // add a unique identifier to use as key and reference to delete later on using the remove button
       }
     }
     // const { statusEffects } = this.state
