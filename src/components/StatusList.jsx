@@ -7,14 +7,14 @@ const StatusList = (props) => {
 
   const [open, setOpen] = useState(false)
   const statusList = props.statusList
-  const [statusItems, setStatusItems] = useState([{name: 'prone', turns: 1}])
-  
+  const [statusItems, setStatusItems] = useState([{ name: 'prone', turns: 1 }])
+
   class StatusObj {
-    constructor(name='new status', duration='1', unit='turns', index) {
+    constructor(name = 'new status', duration = '1', unit = 'turns', index) {
       this.name = name,
-      this.duration = parseInt(duration),
-      this.unit = unit,
-      this.index = index
+        this.duration = parseInt(duration),
+        this.unit = unit,
+        this.index = index
     }
   }
 
@@ -24,8 +24,8 @@ const StatusList = (props) => {
     newStatusItems.push(newItem)
     setStatusItems(newStatusItems)
   }
-  
-  const listItems = statusList.map((status) => 
+
+  const listItems = statusList.map((status) =>
     <form key={Math.random()}>
       <label>
         <input type="text" defaultValue={status.name} />
@@ -33,13 +33,15 @@ const StatusList = (props) => {
       <label>
         Duration:
         <input type="number" defaultValue={status.duration} min={0} max={60} />
+        <select name="status" id="status">
+          <option value="Rounds">Rounds</option>
+          <option value="Minutes">Minutes</option>
+          <option value="Hours">Hours</option>
+          <option value="Days">Days</option>
+        </select>
       </label>
-      <label>
-        Units
-        <input type="text" defaultValue="turns" />
-      </label>
-      <Button 
-        buttonColor="red" 
+      <Button
+        buttonColor="red"
       >
         remove
       </Button>
