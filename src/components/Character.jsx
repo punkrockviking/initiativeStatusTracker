@@ -2,6 +2,22 @@ import React, { Component } from 'react'
 import StatusList from './StatusList'
 import StatusEffect from './StatusEffect'
 import Button from './styledComponents/Button'
+import Dropdown from './Dropdown'
+
+const colorOptions = [
+  {
+    label: 'Red Team',
+    value: 'red'
+  },
+  {
+    label: 'Blue Team',
+    value: 'blue'
+  },
+  {
+    label: 'Green Team',
+    value: 'green'
+  }
+]
 
 class Character extends Component {
   constructor(props) {
@@ -98,6 +114,7 @@ class Character extends Component {
                 max="30"
               />
             </div>
+            <Dropdown options={colorOptions} />
             <label>
               Team
               <input
