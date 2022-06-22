@@ -25,7 +25,7 @@ class Character extends Component {
     this.state = {
       initScore: 1,
       charName: 'name',
-      teamColor: 'green',
+      teamColor: colorOptions[0],
       statusEffects: [],
       concentrate: false,
       showEffects: false,
@@ -34,7 +34,7 @@ class Character extends Component {
     this.handleOnChange = this.handleOnChange.bind(this)
     this.handleOnSubmit = this.handleOnSubmit.bind(this)
     this.addStatus = this.addStatus.bind(this)
-
+    this.onColorChange = this.onColorChange.bind(this)
 
   }
 
@@ -81,6 +81,11 @@ class Character extends Component {
     event.preventDefault()
   }
 
+  onColorChange(color) {
+    this.setState({
+      teamColor: color
+    })
+  }
 
   render() {
 
@@ -114,15 +119,11 @@ class Character extends Component {
                 max="30"
               />
             </div>
-            <Dropdown options={colorOptions} />
-            <label>
-              Team
-              <input
-                defaultValue={this.state.teamColor}
-                type="string"
-                name="teamColor"
-              />
-            </label>
+            <Dropdown 
+              options={colorOptions} 
+              selected={this.state.teamColor}
+              onSelectedChange={this.onColorChange}
+            />
             <label>
               <input type="checkbox" />
               Concentration
