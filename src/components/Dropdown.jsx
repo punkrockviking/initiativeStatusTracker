@@ -11,12 +11,12 @@ const Dropdown = ({ options }) => {
   
   return (
     <div>
-      <form>
+      <div>
         <label>Team Color: </label>
           <select>
             {renderedOptions}
           </select>
-      </form>
+      </div>
     </div>
   )
 }

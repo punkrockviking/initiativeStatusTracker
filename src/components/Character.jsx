@@ -6,16 +6,16 @@ import Dropdown from './Dropdown'
 
 const colorOptions = [
   {
+    label: 'Green Team',
+    value: 'green'
+  },
+  {
     label: 'Red Team',
     value: 'red'
   },
   {
     label: 'Blue Team',
     value: 'blue'
-  },
-  {
-    label: 'Green Team',
-    value: 'green'
   }
 ]
 
