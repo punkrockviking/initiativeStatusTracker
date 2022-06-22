@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Dropdown = ({ options, selected, onSelectedChange }) => {
+
+  const [selectedValue, setSelectedValue] = useState(selected)
+
+  // const handleSelectedChange = (event) => {
+  //   const { value } = event.target
+  //   if (value === 'Red Team') {
+  //     onSelecedChange({
+  //       label: 'Red Team',
+  //       value: 'green'
+  //     })
+  //   } else if (value === 'Green Team') {
+      
+  //   }
+  // }
+  
   const renderedOptions = options.map((option) => {
     return (
-      <option 
-        key={option.value} 
-        onClick={() => (onSelectedChange(option))}  
+      <option
+        key={option}
       >
-        {option.label}
+        {option}
       </option>
     )
   })
+
   
   return (
     <div>
       <div>
         <label>Team Color: </label>
-          <select>
-            {renderedOptions}
-          </select>
+        <select onChange={() => onSelectedChange(event.target.value)}  >
+          {renderedOptions}
+        </select>
       </div>
     </div>
   )

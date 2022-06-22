@@ -81,9 +81,9 @@ class Character extends Component {
     event.preventDefault()
   }
 
-  onColorChange(color) {
+  onColorChange(colorOption) {
     this.setState({
-      teamColor: color
+      teamColor: colorOption
     })
   }
 
@@ -120,7 +120,7 @@ class Character extends Component {
               />
             </div>
             <Dropdown 
-              options={colorOptions} 
+              options={['green', 'red', 'blue']} 
               selected={this.state.teamColor}
               onSelectedChange={this.onColorChange}
             />
