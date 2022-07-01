@@ -18,6 +18,10 @@ const StatusList = (props) => {
     }
   }
 
+  const handleRemoveClick = (event) => {
+    event.preventDefault()
+  }
+
   const addStatus = () => {
     let newStatusItems = statusItems
     const newItem = new StatusObj()
@@ -41,6 +45,7 @@ const StatusList = (props) => {
         </select>
       </label>
       <Button
+        onClick={handleRemoveClick}
         buttonColor="red"
       >
         remove

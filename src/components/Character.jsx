@@ -25,7 +25,7 @@ class Character extends Component {
     this.state = {
       initScore: 1,
       charName: 'name',
-      teamColor: colorOptions[0],
+      teamColor: 'green', // style character block background to be this color
       statusEffects: [],
       concentrate: false,
       showEffects: false,
