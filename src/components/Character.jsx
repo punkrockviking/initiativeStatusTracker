@@ -36,12 +36,18 @@ class Character extends Component {
     this.handleOnSubmit = this.handleOnSubmit.bind(this)
     this.addStatus = this.addStatus.bind(this)
     this.onColorChange = this.onColorChange.bind(this)
-
+    this.updateStatus = this.updateStatus.bind(this)
+    
   }
 
   
   
-  
+  updateStatus(id, key, value) {
+    // find the status to update using the 'id' and set its state
+    // dynamic key name with bracket notation
+    // ex: [key] : value
+    // this.setState({})
+  }
 
   addStatus() {
     const curCount = this.state.count
@@ -140,7 +146,7 @@ class Character extends Component {
             >
               {effectsButtonText}
             </Button>
-            {this.state.showEffects && (<div><StatusList statusList={this.state.statusEffects} /> <Button onClick={this.addStatus} >Add Status</Button></div>)}
+            {this.state.showEffects && (<div><StatusList statusList={this.state.statusEffects} updateStatusState={this.udateStatus} /> <Button onClick={this.addStatus} >Add Status</Button></div>)}
           </div>
         </div>
       </div>
