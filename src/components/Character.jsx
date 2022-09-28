@@ -29,6 +29,7 @@ class Character extends Component {
       statusEffects: [],
       concentrate: false,
       showEffects: false,
+      count: 0,
     }
 
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -38,28 +39,30 @@ class Character extends Component {
 
   }
 
-
-
-
+  
+  
+  
 
   addStatus() {
+    const curCount = this.state.count
+    
     class StatusObj {
       constructor(/*index, */name='new status', duration='1', unit='turns') {
         // this.index = index,
         this.name = name,
         this.duration = parseInt(duration),
         this.unit = unit
-        // add a unique identifier to use as key and reference to delete later on using the remove button
+        this.id = curCount
       }
     }
-    // const { statusEffects } = this.state
     let newStatusItems = this.state.statusEffects
     // const newStatusIndex = statusEffects.length > 0 ? statusEffects.length - 1 : 0
     const newItem = new StatusObj()
     newStatusItems.push(newItem)
     try {
       this.setState({
-      statusEffects : newStatusItems
+        statusEffects : newStatusItems,
+        count: curCount + 1,
     })
     } 
     catch(error) {

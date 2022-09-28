@@ -9,25 +9,25 @@ const StatusList = (props) => {
   const statusList = props.statusList
   const [statusItems, setStatusItems] = useState([{ name: 'prone', turns: 1 }])
 
-  class StatusObj {
-    constructor(name = 'new status', duration = '1', unit = 'turns', index) {
-      this.name = name,
-        this.duration = parseInt(duration),
-        this.unit = unit,
-        this.index = index
-    }
-  }
+  // class StatusObj {
+  //   constructor(name = 'new status', duration = '1', unit = 'turns', id) {
+  //     this.name = name,
+  //       this.duration = parseInt(duration),
+  //       this.unit = unit,
+  //       this.id = id
+  //   }
+  // }
 
   const handleRemoveClick = (event) => {
     event.preventDefault()
   }
 
-  const addStatus = () => {
-    let newStatusItems = statusItems
-    const newItem = new StatusObj()
-    newStatusItems.push(newItem)
-    setStatusItems(newStatusItems)
-  }
+  // const addStatus = () => {
+  //   let newStatusItems = statusItems
+  //   const newItem = new StatusObj()
+  //   newStatusItems.push(newItem)
+  //   setStatusItems(newStatusItems)
+  // }
 
   // ToDo: status list resets all changed inputs to default when a new effect is added. need to save status effects into state and add function that updates state when inputs are changed
 
@@ -37,9 +37,9 @@ const StatusList = (props) => {
   // ToDo: what should the key be? could have key be index, or an incrementing integer. if index is used then all other indecis after would need to be updated to keep consistency (not ideal)
   
   const listItems = statusList.map((status) =>
-    <form key={Math.random()}>
+    <form key={status.name}>
       <label>
-        <input type="text" defaultValue={status.name} />
+        <input type="text" defaultValue={status.id} />
       </label>
       <label>
         Duration:
