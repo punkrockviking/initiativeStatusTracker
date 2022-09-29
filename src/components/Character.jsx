@@ -47,6 +47,7 @@ class Character extends Component {
     // dynamic key name with bracket notation
     // ex: [key] : value
     // this.setState({})
+    // this
   }
 
   addStatus() {
