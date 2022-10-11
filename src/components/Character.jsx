@@ -157,7 +157,7 @@ class Character extends Component {
             >
               {effectsButtonText}
             </Button>
-            {this.state.showEffects && (<div><StatusList statusList={this.state.statusEffects} updateStatusState={this.udateStatus} /> <Button onClick={this.addStatus} >Add Status</Button></div>)}
+            {this.state.showEffects && (<div><StatusList statusList={this.state.statusEffects} updateStatusState={this.udateStatus} deleteStatus={this.deleteStatus} /> <Button onClick={this.addStatus} >Add Status</Button></div>)}
           </div>
         </div>
       </div>

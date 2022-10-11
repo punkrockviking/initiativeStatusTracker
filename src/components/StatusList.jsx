@@ -11,6 +11,7 @@ const StatusList = (props) => {
 
   const handleRemoveClick = (event) => {
     event.preventDefault()
+    console.log(event)
   }
   const handleChangeValue = (event) => {
     // event.preventDefault()
