@@ -44,9 +44,11 @@ class Character extends Component {
   
   updateStatus(id, key, value) {
     // find the status to update using the 'id' and set its state
+    const isLargeNumber = (element) => element > 13
+    const index = this.state.statusEffects.findIndex(status => status.id === key)
     // dynamic key name with bracket notation
     // ex: [key] : value
-    // this.setState({})
+    this.setState({[statusEffects[index].key]: value})
     // this
   }
 
