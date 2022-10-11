@@ -37,6 +37,7 @@ class Character extends Component {
     this.addStatus = this.addStatus.bind(this)
     this.onColorChange = this.onColorChange.bind(this)
     this.updateStatus = this.updateStatus.bind(this)
+    this.deleteStatus = this.deleteStatus.bind(this)
     
   }
 
@@ -44,7 +45,6 @@ class Character extends Component {
   
   updateStatus(id, key, value) {
     // find the status to update using the 'id' and set its state
-    const isLargeNumber = (element) => element > 13
     const index = this.state.statusEffects.findIndex(status => status.id === key)
     // dynamic key name with bracket notation
     // ex: [key] : value
@@ -79,6 +79,14 @@ class Character extends Component {
     }
     
   }
+
+  deleteStatus(key) {
+    const newStatusItems = this.state.statusEffects.filter(status=>status.id !== key)
+    this.setState({
+      statusEffects: newStatusItems
+    })
+  }
+  
 
   handleOnChange(event) {
     event.preventDefault()

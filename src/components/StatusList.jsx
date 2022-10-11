@@ -12,6 +12,12 @@ const StatusList = (props) => {
   const handleRemoveClick = (event) => {
     event.preventDefault()
   }
+  const handleChangeValue = (event) => {
+    // event.preventDefault()
+    // const { ident, name, value } = event.target
+    // console.log(event.target)
+    // props.updateStatusState(id, name, value)
+  }
 
   // ToDo: status list resets all changed inputs to default when a new effect is added. need to save status effects into state and add function that updates state when inputs are changed
 
@@ -20,14 +26,14 @@ const StatusList = (props) => {
 
   
   const listItems = statusList.map((status) =>
-    <form key={status.id}>
+    <form key={status.id} onChange={handleChangeValue}>
       <label>
-        <input type="text" defaultValue={status.name} />
+        <input type="text" ident="name" defaultValue={status.name} />
       </label>
       <label>
         Duration:
-        <input type="number" defaultValue={status.duration} min={0} max={60} />
-        <select name="status" id="status">
+        <input type="number" ident="durNum" defaultValue={status.duration} min={0} max={60} />
+        <select name="status" id="status" ident="unit">
           <option value="Rounds">Rounds</option>
           <option value="Minutes">Minutes</option>
           <option value="Hours">Hours</option>
